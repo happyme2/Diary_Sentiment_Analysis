@@ -1,10 +1,10 @@
 import torch
 
 from data.kobert_tokenizer import KoBERTTokenizer
-tokenizer = KoBERTTokenizer.from_pretrained('kobert/kobert-base-v1')
+tokenizer = KoBERTTokenizer.from_pretrained('skt/kobert-base-v1')
 
 from transformers import BertModel
-model = BertModel.from_pretrained('kobert/kobert-base-v1')
+model = BertModel.from_pretrained('skt/kobert-base-v1')
 
 def get_kobert_model(model_path, vocab_file, ctx="cpu"):
     bertmodel = BertModel.from_pretrained(model_path)
@@ -16,7 +16,7 @@ def get_kobert_model(model_path, vocab_file, ctx="cpu"):
     return bertmodel, vocab_b_obj
 
 import gluonnlp as nlp
-bertmodel, vocab = get_kobert_model('kobert/kobert-base-v1',tokenizer.vocab_file)
+bertmodel, vocab = get_kobert_model('skt/kobert-base-v1',tokenizer.vocab_file)
 
 # KoBERT 모델에 적합한 입력 데이터 구성하기
 import torch
@@ -80,10 +80,13 @@ class BERTClassifier(nn.Module):
 # 완성된 모델 불러오기
 import pickle
 
-#GPU 사용
-device = torch.device("cuda:0")
+
+#GPU 사용 -> CPU사용 (이상미님 감사합니다!)
+# If you are running on a CPU-only machine,
+# please use torch.load with map_location=torch.device('cpu') to map your storages to the CPU.
+device = torch.device("cpu")
 model = BERTClassifier(bertmodel,  dr_rate=0.5).to(device)
-model.load_state_dict(torch.load('data/param7.pt'))
+model.load_state_dict(torch.load('data/param7.pt', device))
 
 tok = nlp.data.BERTSPTokenizer(tokenizer, vocab, lower=False)
 tok = tokenizer.tokenize
