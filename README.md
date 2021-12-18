@@ -59,6 +59,7 @@ cd 폴더위치 streamlit run main.py
 |KoBERT|한국어 단발성 대화 |56%|
 |BERT|한국어 단발성 대화 |48%|
 |CNN Fast Text|한국어 단발성 대화 |42%| 
+
 ![image](https://user-images.githubusercontent.com/77032087/146624797-7a0c0c7d-d2cf-479f-b639-34d2f721f8b1.png)
 
 2. 한국어 단발성 대화 데이터셋의 기존 감정 분류 7개(공포,놀람,분노,슬픔,중립,행복,혐오)를 수정하고, 한국어 연속성 데이터셋과 추가 학습 시키며 성능 향상에 노력하였다.
@@ -69,6 +70,7 @@ cd 폴더위치 streamlit run main.py
 |KoBERT|단발성(5개) |69%|
 |KoBERT|단발성+연속성(7개) |72%|
 - 단발성+연속성 데이터셋 감정 분류를 [공포,놀람,분노,슬픔,중립,행복,혐오]로 7개의 감정으로 합치며 학습한 결과 72%의 정확도가 나타났다.
+
 ![image](https://user-images.githubusercontent.com/77032087/146624766-04298a5b-cc24-4fdd-9cbc-bfa4040c6b2b.png)
 
 
