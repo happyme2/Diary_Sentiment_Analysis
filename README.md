@@ -1,6 +1,7 @@
-# Diary_Sentiment_Analysis
-
+# Diary_Sentiment_Analysis 
 ### 인공지능(AI), 자연어처리(NLP), 감성분석(Sentiment-Analysis)
+### [User-WebSite](https://share.streamlit.io/soloy8/ai_diary/main.py) : 프로젝트 배포 웹사이트
+
 ---
 # 1. 프로젝트 개요
 - 프로젝트 명 : 끄적이는 일기속에서 너의 노래가 느껴진거야 ♬
@@ -11,7 +12,7 @@
 - 프로젝트 개요 : 간략한 텍스트 형식의 일기 작성 후, 감정을 자동 분류 및 기록 한다. 나아가 분류 된 감정에 적합한 노래를 추천한다.
 - 프로젝트 효과 : 객관적인 감정 분석으로 자신의 감정을 더 정확하게 확인 하며 감정에 따른 노래 추천으로 감정을 치유할 수 있다.  
 정신과 심리 치료 참고 자료로 활용 가능하며 스스로의 심리 상태를 확인하고 개선하는 자가 치료 목적으로도 활용 가능하다.
-- 프로젝트 시연 결과 :     
+- 프로젝트 시연 예시 :  ![result](https://user-images.githubusercontent.com/77032087/146624714-5122a6c7-8f6d-4c57-8f8a-110bf21a7f4f.png)   
 
 # 2. 프로젝트 환경 구성
 - 추가 학습 데이터셋 : [AIhub](https://aihub.or.kr/opendata/keti-data/recognition-laguage/KETI-02-009) 한국어 단발성 대화 데이터셋, 한국어 연속성 대화 데이터셋
@@ -58,6 +59,7 @@ cd 폴더위치 streamlit run main.py
 |KoBERT|한국어 단발성 대화 |56%|
 |BERT|한국어 단발성 대화 |48%|
 |CNN Fast Text|한국어 단발성 대화 |42%| 
+![image](https://user-images.githubusercontent.com/77032087/146624797-7a0c0c7d-d2cf-479f-b639-34d2f721f8b1.png)
 
 2. 한국어 단발성 대화 데이터셋의 기존 감정 분류 7개(공포,놀람,분노,슬픔,중립,행복,혐오)를 수정하고, 한국어 연속성 데이터셋과 추가 학습 시키며 성능 향상에 노력하였다.
 
@@ -67,5 +69,6 @@ cd 폴더위치 streamlit run main.py
 |KoBERT|단발성(5개) |69%|
 |KoBERT|단발성+연속성(7개) |72%|
 - 단발성+연속성 데이터셋 감정 분류를 [공포,놀람,분노,슬픔,중립,행복,혐오]로 7개의 감정으로 합치며 학습한 결과 72%의 정확도가 나타났다.
+![image](https://user-images.githubusercontent.com/77032087/146624766-04298a5b-cc24-4fdd-9cbc-bfa4040c6b2b.png)
 
-# 5. 프로젝트 참고 자료
+
